@@ -1,0 +1,26 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="mobile/layout">
+    <HEAD>
+    	<TITLE>Start Page</TITLE>
+    </HEAD>
+<BODY> <!-- Displays Video -->
+	<div layout:fragment="content" >
+	
+		<div style="padding-top: 100px; padding-bottom: 120px; font-size: 200%; text-align: center;">
+			<p class="text-primary"><b>Soft</b></p>
+			<p class="text-success"><b>Skills</b></p>
+			<p class="text-danger"><b>Training</b></p>
+			<p class="text-orange"><b>App</b></p>
+		</div>
+		
+		<div class="col-md-5 text-center">
+			<a th:href="@{/mobile/practice-list}" href="mobile/practice-list" class="btn btn-lg btn-primary">Practice</a>
+		</div>
+		<br></br>
+		<div class="col-md-5 text-center">
+			<a th:href="@{/mobile/test-list}" href="mobile/test-list" class="btn btn-lg btn-primary">Test</a>
+		</div>
+	</div>
+</BODY>
+</html>

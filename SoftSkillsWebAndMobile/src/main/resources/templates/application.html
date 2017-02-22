@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+
+<head>
+	<title>Business</title>
+</head>
+
+<body>
+    <div layout:fragment="content" >
+            <div class="row">
+                <div class="tab-content">
+                	<div class="tab-pane active" id="tab3">
+                		<div class="container">
+                			<div class="col-md-12">
+                				
+                				<h1>Download Android APK</h1>
+                				<p>Click the below button to download the APK file.</p>
+                				<a th:src="@{/modules/android/ssts.apk}" href="modules/android/ssts.apk" class="btn btn-primary" download="">Download</a>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+            </div> <!-- /.row ends -->
+        </div> <!-- /.container ends -->
+</body>
+</html>

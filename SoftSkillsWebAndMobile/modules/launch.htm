@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div><p>on launch page</p></div>
+  <div class="add-info">
+    <span class="rightfloat">
+        <span class="red">
+            <span id="contact-number"></span>
+        </span>
+    </span>
+</div>
+<script>
+	localStorage.setItem("sum", 0);
+	localStorage.setItem("mode", gup("mode"));
+	localStorage.setItem("appURL", gup("appURL"));
+	localStorage.setItem("folderLocation", gup("folderLocation"));
+	localStorage.setItem("testId", gup("testId")); 
+
+	window.location = gup("folderLocation").concat("q1.htm");
+	
+	//window.location = gup("appURL")+ "/modules/Result.htm";
+	
+	//window.location.href= "http://localhost:8080/modules/PracticeMode_16/PracticeMode/q1.htm";
+/*      	window.onload = function() {
+    document.getElementById('contact-number').innerHTML = gup("appURL");
+}     */
+	function gup( name ) {
+	  var url = window.location.href;
+	  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	  var regexS = "[\\?&]"+name+"=([^&#]*)";
+	  var regex = new RegExp( regexS );
+	  var results = regex.exec( url );
+	  return results == null ? null : results[1];
+	}
+</script>
+</body>
+</html>

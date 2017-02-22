@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="mobile/layout">
+
+<head>
+	<title>Business</title>
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+</head>
+
+<body>
+    <div layout:fragment="content" >
+		<div class="row">
+			<div class="tab-content">
+               	<div class="container">
+               		<h1>Training Module List</h1>
+					<div class="table-responsive">
+            			<table class="table table-striped">
+		               		<thead>
+		                   	<tr>
+                       		<th>Module Name</th>
+                       		<th></th>
+                       		<th></th>
+                    		</tr>
+                			</thead>
+                			<tbody >
+                    			<tr th:each="module : ${module}">
+                    			<td th:text="${module.name}" />
+			                   	<td ><a th:href="@{/mobile/thymeleaf_to_param(location=${module.location}, mode='practice')}" class="btn btn-primary" >Start</a></td>
+			                   	<td ><button th:href="@{/module/info(id=${module.id})}" >Info</button></td>
+			                </tr>
+                			</tbody>
+            			</table>
+        			</div>
+            	</div>
+            </div>
+         </div> <!-- /.row ends -->
+    </div> <!-- /.container ends -->
+</body>
+</html>

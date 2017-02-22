@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+	<title>Upload Application</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="col-md-12 text-center">
+        <form class="form-signin" method="post" enctype="multipart/form-data" th:action="@{/mobile/upload}">
+            <h2>Upload Android APK File </h2>
+            	<p class="text-danger">Make sure to name the file ssts.apk</p>
+        		<p class="text-danger">When you click upload, it will upload the file.</p>
+        		<p class="text-danger">It could take several minutes.</p>
+            <input type="file" name="apk_file" class="form-control top" accept="application/apk"/>
+            
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+        </form>
+    	</div>
+    </div>
+</body>
+</html>

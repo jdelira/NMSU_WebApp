@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<title>Soft Skills Training System</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<link href="/css/bootstrap.css" rel="stylesheet" />
+<link href="/css/styles.css" rel="stylesheet" />
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/app.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" th:href="@{/}" href="/">Soft Skills Training System</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a th:if="${g_user == null}"
+						th:href="@{/user/reset-password}" href="reset">Reset Password</a></li>
+					<li><a th:if="${g_user == null}" th:href="@{/user/register}"
+						href="register">Register</a></li>
+					<li><a th:if="${g_user == null}" th:href="@{/login}"
+						href="login">Login</a></li>
+					<li><a th:if="${g_user}" th:href="@{/logout}" href="mobile/logout"><i
+							class="icon-chevron-left"></i>Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+
+		<div class="row row-offcanvas row-offcanvas-left">
+
+			<div layout:fragment="content" class="content-fragment">
+				<!-- CONTENT GOES HERE -->
+			</div>
+
+		</div>
+		<!--/row-->
+	</div>
+	<!--/.container-->
+
+</body>
+</html>

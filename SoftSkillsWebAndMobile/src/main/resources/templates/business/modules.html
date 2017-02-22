@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>Modules</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        
+        <form class="form-signin" method="post" enctype="multipart/form-data" th:action="@{/business/upload}">
+            <h2>Upload module zip file </h2>
+            <input type="file" name="zip_file" class="form-control top" accept="application/zip"/>
+            
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+        </form>
+        <p>After you click upload wait for your browser to redirect you to the list.</p>
+        <p>It could take several minutes.</p>
+    </div>
+</body>
+</html>

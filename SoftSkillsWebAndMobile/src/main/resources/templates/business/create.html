@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout">
+<head>
+<title>Create a Test</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1>Category List</h1>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Categories</th>
+                        <th>Select</th>
+                        <th th:if="${g_user.isAdmin()}">Delete</th>
+                        <th th:if="${g_user.isAdmin()}">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="category : ${softSkill}">
+                        <td th:text="${category.category}">name</td>
+                        <td></td>
+                        <td th:if="${g_user.isAdmin()}"><a th:href="@{/user/delete(id=${user.id})}">Delete</a></td>
+                        <td th:if="${g_user.isAdmin()}"><a th:href="@{/user/edit/{id}(id=${user.id})}">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+            
+        </div>
+    </div>
+</body>
+</html>

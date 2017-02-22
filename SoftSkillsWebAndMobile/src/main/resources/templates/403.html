@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>Re-send Activation</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="alert alert-info">
+            <p>Sorry, based on your user authorization the web site security blocked your action.</p>
+            <p>If you would like to request access please email the web site manager at:</p>
+            <p><span th:text="${serverManagerEmail}"/></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>Re-send Activation</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="alert alert-info">
+            <p>Activation was just sent to your inbox or junk mail box.</p>
+            <p>Please check your email for instructions on how to activate your account.</p>
+            <p>If you need assitance contact the site manager at:</p>
+            <p><span th:text="${serverManagerEmail}"/></p>
+        </div>
+    </div>
+</body>
+</html>

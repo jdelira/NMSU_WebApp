@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>HOME</title>
+</head>
+<body>
+    <div layout:fragment="content" >
+    	<div class="tab-content">
+			<div class="tab-pane active" id="tab1">
+				<div class="container">
+					<div class="col-md-6">
+						<h1 class="text-danger">Soft Skills Training System</h1>
+                                    <p>
+                                        
+                                    </p>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- <img src="img/softskills.png" class="img-responsive" alt="" height="350" width="600"> -->
+                            </div>
+                        </div>
+                    
+                        <div class="container">
+                            <div class="col-md-4">
+                                <div class="well">
+                                    <h1 class="text-primary text-center">About</h1>
+                                    <!-- <img src="img/header.jpg" class="img-responsive" alt="" height="145"> -->
+                                    <p>
+                                        
+                                    </p>
+                                    <a href="about" class="btn btn-success btn-block">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="well">
+                                    <h1 class="text-orange text-center">Business</h1>
+                                    <!-- <img src="img/certification.jpg" class="img-responsive" alt="" height="145" width="145"> -->
+                                    <p>
+                                        
+                                    </p>
+                                    <a th:href="@{/business/business/0}" href="business/business" class="btn btn-success btn-block">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="well">
+                                    <h1 class="text-success text-center">Application</h1>
+                                    <!-- <img src="img/android.jpg" class="img-responsive" alt="" height="145" width="145"> -->
+                                    <p>
+                                        
+                                    </p>
+                                    <a href="application" class="btn btn-success btn-block">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="container ">
+                        <div class="col-lg-12">
+                            <div class="well">
+                                <h2>Contact</h2>
+                                <!-- <img class="img-responsive" src="img/nmsu.png" alt="" height="145" width="145"> -->
+                                <p>
+                                
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- .tab-content ends --> <!-- /.row ends -->
+        </div> <!-- /.container ends -->
+
+</body>
+</html>

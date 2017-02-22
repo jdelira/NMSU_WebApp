@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+
+<head>
+	<title>Business</title>
+</head>
+
+<body>
+    <div layout:fragment="content" >
+            <div class="row">
+                <div class="tab-content">
+                	<div class="tab-pane active" id="tab3">
+                	<div class="col-md-12">
+            		<h1>Training Module List</h1>
+
+        			<div class="table-responsive">
+            			<table class="table table-striped">
+                		<thead>
+                   	 		<tr>
+                        		<th>Module Name</th>
+                        		<th>Owner</th>
+                        		<th>Location</th>
+                        		<th>Delete</th>
+                        		<th>Upload Date</th>
+                    		</tr>
+                		</thead>
+                		<tbody>
+                    		<tr th:each="module : ${module}">
+                    			<td th:text="${module.name}">name</td>
+                    			<td th:text="${module.owner}">owner</td>
+                    			<td ><a th:href="${module.location}"><span th:text="${module.location}"></span></a></td>
+                    			<td ><a th:href="@{/module/delete(id=${module.id})}">Delete</a></td>
+                    			<td th:text="${module.loaddate}">load date</td>
+                    		</tr>
+                		</tbody>
+            			</table>
+        			</div>
+        			</div>
+                		<div class="container">
+                			<div class="col-md-4 text-center">
+                				<h1>Upload</h1>
+                				<p>You can upload your modules here.</p>
+                				<a th:href="@{/business/modules/0}" href="/business/modules" class="btn btn-primary btn-lg">Upload</a>
+                			</div>
+                		
+                			<div class="col-md-4 text-center">
+                				<h1 class="text-center">Create</h1>
+                				<p class="text-danger">Sorry! Currently not functional.</p>
+                				<a th:href="@{/business/create/0}" href="/business/create" class="btn btn-primary btn-lg">Create</a>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+            </div> <!-- /.row ends -->
+        </div> <!-- /.container ends -->
+</body>
+</html>

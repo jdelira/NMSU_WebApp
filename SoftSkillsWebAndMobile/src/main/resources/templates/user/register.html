@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorator="layout">
+<head>
+<title>REGISTER</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <form class="form-signin" th:action="@{/user/register}" th:object="${user}" action="/user/register" method="post">
+            <h2 class="form-signin-heading">Please Register</h2>
+            
+            <div th:if="${#fields.hasErrors()}" class="alert alert-danger">
+                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+                <div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">Username error</div>
+                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</div>
+            </div>
+            
+            <div class="col-sm-6" style="padding-top: 20px; padding-bottom: 20px;">
+            <input type="text" id="inputFirst" name="firstName" class="form-control" placeholder="First Name" required="required"/>
+            </div>
+            
+            <div class="col-sm-6" style="padding-top: 20px; padding-bottom: 20px;">
+            <input type="text" id="inputLast" name="lastName" class="form-control" placeholder="Last Name" required="required"/>
+            </div>
+            
+            <div class="col-sm-12">
+            <input type="text" id="inputEmail" name="email" class="form-control" placeholder="Email" required="required" autofocus="autofocus"/>
+            </div>
+            
+            <div class="col-sm-12" style="padding-top: 10px;">
+            <input type="text" id="inputUser" name="userName" class="form-control" placeholder="Username" required="required"/>
+            </div>
+            
+            <div class="col-sm-6" style="padding-bottom: 10px; padding-top: 10px;">
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required"/>
+			</div>
+			
+			<div class="col-sm-6" style="padding-bottom: 10px; padding-top: 10px;">
+			<input type="password" id="inputConfirm" name="confirmPassword" class="form-control" placeholder="Confirm Password" required="required"/>
+			</div>
+
+			<!--<div class="col-sm-12" style="padding-bottom: 10px;">
+			<input type="text" id="inputPhone" name="phoneNum" class="form-control bfh-phone" placeholder="Phone Number" data-format="+1 (ddd) ddd-dddd" required="required"/>
+			</div> -->
+			
+			<div class="col-sm-12" style="padding-bottom: 10px;">
+			<input type="text" id="inputCompany" name="companyName" class="form-control" placeholder="Company Name" required="required"/>
+			</div>
+
+			<div class="col-sm-12">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

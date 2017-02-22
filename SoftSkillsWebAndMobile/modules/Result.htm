@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+var mode = window.localStorage.getItem("mode");
+var sum = localStorage.getItem("sum");
+var testId = localStorage.getItem("testId");
+var appURL = localStorage.getItem("appURL");
+
+if (mode == "test"){
+    window.location = appURL.concat("/mobile/logresults?testId=", testId, "&", "score=", sum);
+}
+else {
+    window.location = appURL.concat("/mobile/practice-list");
+    
+}
+</script>
+</body>
+</html>

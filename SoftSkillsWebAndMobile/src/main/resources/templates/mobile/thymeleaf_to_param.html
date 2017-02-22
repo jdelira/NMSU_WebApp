@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+    <head>
+        <!-- <meta http-equiv="refresh" th:content="0;url=http://localhost:8080/modules/result.html?testId=${testId}" /> --> 
+    </head>
+    <body>
+    
+<div><p>on params page</p></div>
+    <script th:inline="javascript">
+    	var str = "/modules/launch.htm?folderLocation=";
+ 		window.location =  str.concat([[${folderLocation}]], [[${and}]], "testId=", [[${testId}]], [[${and}]], [[${and}]], "mode=", [[${mode}]], [[${and}]], "appURL=", [[${appURL}]]);
+ 
+	</script>
+    </body>
+</html>
